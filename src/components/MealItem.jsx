@@ -1,6 +1,8 @@
 import { View, Text, Pressable, Image } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
+import MealDetails from "./MealDetails";
+
 function MealItem({
   id,
   title,
@@ -29,11 +31,11 @@ function MealItem({
           />
         </View>
         <Text className="m-2 text-center text-lg font-bold">{title}</Text>
-        <View className="flex-row items-center justify-center space-x-2 p-2">
-          <Text className="text-xs">{duration} m</Text>
-          <Text className="text-xs">{complexity.toUpperCase()}</Text>
-          <Text className="text-xs">{affordability.toUpperCase()}</Text>
-        </View>
+        <MealDetails
+          affordability={affordability}
+          complexity={complexity}
+          duration={duration}
+        />
       </Pressable>
     </View>
   );
