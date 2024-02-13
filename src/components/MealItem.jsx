@@ -1,12 +1,27 @@
 import { View, Text, Pressable, Image } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
-function MealItem({ title, imageUrl, duration, complexity, affordability }) {
+function MealItem({
+  id,
+  title,
+  imageUrl,
+  duration,
+  complexity,
+  affordability,
+}) {
+  const navigation = useNavigation();
+
   return (
     <View
       className="  m-4 rounded-lg bg-white shadow-sm shadow-black"
       style={{ elevation: 4 }}
     >
-      <Pressable className="rounded-lg active:opacity-60">
+      <Pressable
+        className="rounded-lg active:opacity-60"
+        onPress={() => {
+          navigation.navigate("MealDetails", { mealId: id });
+        }}
+      >
         <View>
           <Image
             source={{ uri: imageUrl }}

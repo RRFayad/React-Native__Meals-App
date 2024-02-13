@@ -27,6 +27,7 @@ function MealsOverViewScreen({ navigation, route, name, params, path }) {
         renderItem={(itemData) => {
           return (
             <MealItem
+              id={itemData.item.id}
               title={itemData.item.title}
               imageUrl={itemData.item.imageUrl}
               affordability={itemData.item.affordability}

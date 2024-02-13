@@ -3,7 +3,7 @@ import { View, Pressable, Text } from "react-native";
 function CategoryGridTile({ title, color, onPress: pressHandler }) {
   return (
     <View
-      className={`m-4 h-[150px] flex-1 rounded-lg  shadow-sm shadow-black active:opacity-50 active:shadow-none`}
+      className={`m-4 h-[150px] flex-1 rounded-lg  shadow-sm shadow-black  active:shadow-none`}
     >
       <Pressable
         className="flex-1  rounded-lg active:opacity-50 "
